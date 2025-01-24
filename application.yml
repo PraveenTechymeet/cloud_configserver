@@ -17,3 +17,7 @@ microservice:
     endpoints:
       endpoint:
         uri: http://ORDER-SERVICE/order/bookOrder    
+okta:
+  oauth2:
+    issuer: https://dev-08209454.okta.com/oauth2/default
+    audience: api://default
