@@ -1,13 +1,19 @@
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
-    fetch-registry: true
     register-with-eureka: true
-    serviceUrl:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
-
-okta:
-  oauth2:
-    issuer: https://dev-84928916.okta.com/oauth2/default
-    audience: api://default
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    
+    
+microservice:
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payment/doPayment
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://ORDER-SERVICE/order/bookOrder    
